@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Jua", sans-serif;
+  background: url("end.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.end-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* 가온이 */
+.gaon {
+  position: absolute;
+  top: 300px; /* 화면 맨 위 */
+  left: 50%;
+  transform: translateX(-50%)
+}
+.gaon img {
+  width: 430px;
+  height: auto;
+}
+
+.first {
+  width : 200px;
+  height :60px;
+  top: 650px;
+  left: 85%;
+  font-family: "Noto Sans KR", sans-serif;
+  color: white;
+  font-weight: bold;
+  display: flex;             /* 중앙 정렬용 */
+  justify-content: center;   /* 가로 중앙 */
+  align-items: center;       /* 세로 중앙 */
+  font-size: 35px;
+  background-color : #869e3a;
+  border: 3px solid #6c842c;
+  position: absolute;
+  overflow : hidden;
+}
+
+.shadow {
+  width : 200px;
+  height : 125px;
+  background-color : #94ac3c;
+  border-radius : 100px; 
+  overflow : hidden;
+  margin : 560px 0 0 660px;
+}
+
+/* 맞춘 개수 글자 위치 & 스타일 */
+.result-text {
+  position: absolute;       /* 위치 조절 가능 */
+  top: 250px;               /* 화면 맨 위에서 떨어진 거리 */
+  left: 51%;                /* 화면 가로 중앙 */
+  transform: translateX(-50%); /* 정확히 중앙 정렬 */
+  font-size: 47px;          /* 글자 크기 */
+  font-weight: bold;        /* 글자 두께 */
+  color: #ffffff;           /* 글자 색상 */
+  text-shadow: 6px 6px 8px rgba(0,0,0,0.5); /* 그림자 */
+  -webkit-text-stroke: 0.01px black;
+  text-align: center;       /* 가운데 정렬 */
+  z-index: 5;               /* 다른 요소 위로 표시 */
+}

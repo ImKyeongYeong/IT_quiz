@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Jua", sans-serif;
+  background: url("main.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* 시계 */
+.watch {
+  position: absolute;
+  top: 45px; /* 화면 맨 위 */
+  left: 25%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index : 3;
+}
+.watch img {
+  width: 700px;
+  height: auto;
+}
+.watch-text {
+  top: 20px;
+  left: 120px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}
+
+/* 남은 문제 표기 */
+.timer-container {
+  position: absolute;
+  width: 1000px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#remaining-text {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke: 0.01px black;
+  top: 40px;  /* 위치 조정 */
+  left: 52%;
+}
+
+/* 줄어드는 타이머 */
+.timer {
+  width : 700px;
+  height : 30px;
+  background-color : yellow;
+  border: 3px solid rgb(127, 124, 124);
+  position: absolute;
+  top : 8.2px;
+  left : 3.1%;
+  border-radius : 50px;
+  overflow : hidden;
+  margin : 66px 0 0 371px;
+  transition : transform 10s linear;
+  transform-origin: left;
+  z-index: 2
+}
+
+/* 가만히 있는 타이머 */
+.timer1 {
+  width : 700px;
+  height : 30px;
+  background-color : white;
+  border: 3px solid rgb(127, 124, 124);
+  border-radius : 50px; 
+  overflow : hidden;
+  position : absolute;
+  top : 130px;
+  left : 26%;
+  transform: translateX(-50%);
+  margin : -55px 0 0 371px;
+}
+
+
+/* 말풍선 */
+.speech {
+  position: absolute;
+  top: 140px; /* 타이머 밑에 */
+  left: 52%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.speech img {
+  width: 800px;
+  height: auto;
+  display: block;
+}
+
+.speech .question {
+  position: absolute;
+  top: 14%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  font-size: 37px;
+  font-weight: bold;
+  color: black; 
+  width: 80%;
+  text-align: center;
+  z-index: 2;   /* 텍스트가 이미지 위로 올라오게 */
+}
+
+/* 슬롯 영역 (사용자가 단어를 맞춰 넣는 칸) */
+.slots {
+  position: fixed;
+  top: 493px;
+  left: 50.8%;
+  transform: translateX(-50%);
+  display: flex;              /* 가로로 칸들을 나열 */
+  gap: 15px;                  /* 칸 사이 간격 */
+  justify-content: center;    /* 가운데 정렬 */
+  margin-bottom: 35px;            /* 위아래 여백 */
+}
+
+.slot {
+  width: 48px;                /* 칸 너비 */
+  height: 48px;               /* 칸 높이 */
+  color: white; 
+  border: 3px solid #9C610E;     /* 테두리 */
+  border-radius: 5px;         /* 모서리 둥글게 */
+  display: flex;              /* 글자를 중앙에 배치 */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;            /* 글자 크기 */
+  font-weight: bold;
+  background-color: #FFF6D6;  /* 칸 배경색 */
+}
+
+/* 글자 영역 (사용자가 선택할 글자) */
+.letters {
+  position: fixed;
+  top: 597px;
+  left: 39%;
+  transform: translate(10%, -10%);
+  display: flex;              
+  flex-wrap: wrap;            /* 글자가 많으면 다음 줄로 넘어감 */
+  gap: 15px;
+  width: 300px;  /* 가로 길이를 주어 일정길이 이후엔 단어가 내려감 */                
+  justify-content: center; 
+  max-width: 600px;              
+}
+
+.letter {
+  width: 47px;                
+  height: 45px;    
+  color: white;         
+  border: 3px solid #9C610E;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);     
+  border-radius: 5px;         
+  display: flex;              
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;            
+  font-weight: bold;
+  background-color: #FECD2F;  
+  cursor: pointer;             /* 마우스 올리면 클릭 가능 느낌 */
+  transition: transform 0.2s; 
+}
+
+.letter.disabled {
+  background-color: #A7A5A0; 
+  color: #fff;
+  border: 3px solid #707070;
+  pointer-events: none;   /* 클릭 불가 처리 */
+}
+
+.letter:hover {
+  transform: scale(1.1);       /* 마우스 올리면 살짝 커짐 */
+}
+
+
+.next-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 91%;
+  transform: translateX(-50%);
+  margin-top: 50px;
+  padding: 10px 20px;
+  font-size: 23px;
+  font-weight: bold;
+  background: #4CAF50;
+  color: white;
+  border: 3px solid #6c842c;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.next-btn:hover {
+  background: #45a049;
+}
+
+.gaon {
+  position: absolute;
+  top: 170px; /* 화면 맨 위 */
+  left: 50%;
+  transform: translateX(-50%)
+}
+.gaon img {
+  width: 350px;
+  height: auto;
+}
+
+.Gaon {
+  position: absolute;
+  top: 170px; /* 화면 맨 위 */
+  left: 50%;
+  transform: translateX(-50%)
+}
+.Gaon img {
+  width: 350px;
+  height: auto;
+}

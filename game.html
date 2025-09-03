@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT단어퀴즈</title>
+  <link rel="stylesheet" href="game.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="game-container">
+    <!-- 시계 -->
+    <div class="watch">
+      <img src="image001.png" alt="시계"></div>
+    
+      <!-- 남은 문제 표기 -->
+    <div class ="timer-container">
+      <div id = "remaining-text">10문제 남았어!</div>
+    </div>
+    
+    <!-- 가만히 있는 타이머 -->
+     <div class = "timer"></div>
+
+    <!-- 줄어드는 타이머 -->
+     <div class = "timer1"></div>
+     
+    <!-- 말풍선 -->
+    <div class="speech">
+      <img src="image03.png" alt="말풍선">
+      <div class="question" id="bubble"></div>
+    </div>
+
+    <!-- 정답칸(빈칸) -->
+    <div id="slots" class="slots"></div>
+
+    <!-- 글자 버튼 -->
+    <div id="letters" class="letters"></div>
+
+    <!-- 다음 문제 버튼 -->
+    <button id="nextBtn" class="next-btn">다음 문제</button>
+
+    <!-- 문제 맞췄을 때 가온이-->
+    <div class = "gaon">
+      <img src = "good1.png"></src>
+    </div>
+  </div>
+
+    <!-- 문제 틀렸을 때 가온이 -->
+    <div class = "Gaon">
+      <img src = "bed.png"></src>
+    </div>
+  <script src = "game.js"></script>
+</body>
+</html>
